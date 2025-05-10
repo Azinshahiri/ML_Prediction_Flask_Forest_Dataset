@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>ML Model Prediction</title>
+</head>
+<body>
+    <h1>Make a Prediction</h1>
+    <form method="POST" action="/predict">
+        <input type="number" step="any" name="feature1" placeholder="Feature 1" required><br><br>
+        <input type="number" step="any" name="feature2" placeholder="Feature 2" required><br><br>
+        <input type="number" step="any" name="feature3" placeholder="Feature 3" required><br><br>
+        <input type="number" step="any" name="feature4" placeholder="Feature 4" required><br><br>
+        <input type="number" step="any" name="feature5" placeholder="Feature 5" required><br><br>
+        <input type="number" step="any" name="feature6" placeholder="Feature 6" required><br><br>
+        <input type="number" step="any" name="feature7" placeholder="Feature 7" required><br><br>
+        <input type="number" step="any" name="feature8" placeholder="Feature 8" required><br><br>
+        <input type="number" step="any" name="feature9" placeholder="Feature 9" required><br><br>
+        <input type="number" step="any" name="feature10" placeholder="Feature 10" required><br><br>
+
+
+        <label for="model_choice">Choose a model:</label>
+        <select name="model_choice">
+            <option value="linear">Linear Regression</option>
+            <option value="lasso">Lasso</option>
+            <option value="lasso_cv">LassoCV</option>
+            <option value="ridge">RidgeCV</option>
+            <option value="elastic">ElasticNet</option>
+            <option value="elastic_cv">ElasticNetCV</option>
+        </select><br><br>
+
+        <button type="submit">Predict</button>
+    </form>
+
+    {% if prediction %}
+        <h2>{{ prediction }}</h2>
+    {% endif %}
+</body>
+</html>
